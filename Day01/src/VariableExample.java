@@ -35,7 +35,7 @@ public class VariableExample {
 		int myscore = score - 20;
 		System.out.println(myscore);
 		
-		//변수의 자료형에 맞지 않는 데이터는 저장이 불가능합니다.
+		//변수의 자료형에 맞지 않는 데이터는 저장이 불가능합니다
 //		int count = "한번"; (X)
 //		int count = 23.5; (X)
 //		String str = 100; (X)
