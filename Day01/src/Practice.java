@@ -16,6 +16,8 @@ public class Practice {
 		
 		System.out.println(name);
 		System.out.println(sum);
+		
+	
 
 	}
 

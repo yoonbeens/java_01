@@ -42,6 +42,8 @@ public class Identifier {
 	    String 名 = "홍길동";
 	    System.out.println(숫자);
 	    System.out.println(名);
+	    
+	    //test
 	  
 		//클래스의 이름은 항상 대문자로 시작
 	    //변수 이름은 소문자가 원칙(camel case는 연결문자 대문자)

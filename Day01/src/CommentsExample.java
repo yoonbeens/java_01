@@ -19,6 +19,8 @@ public class CommentsExample {
 		실행시킵니다.
         */
 		
+		//test
+		
 		//syso + Ctrl +space: 빠른 출력 함수를 생성.
 		//Ctrl + F11: 실행 단축기
 		//원하는 위치에 커서를 배치 후 Ctrl + /: 주석 생성, 해제 단축키
