@@ -15,14 +15,14 @@ public class Identifier {
 		System.out.println(Age);
 		
 		//2. 식별자 이름은 숫자로 지정하거나 숫자로 시작하시면 안됩니다.
-//		int 700 = 365;
-//		int 7number = 7;
+//		int 700 = 365;(x)
+//		int 7number = 7;(x)
 	    int num71er= 7;
 	    System.out.println(num71er);
 		
 		//식별자 이름에 공백을 포함할 수 없습니다.
 //		int my birth day = 19921013; (X)
-//		intmybirthday = 19921013;
+//		intmybirthday = 19921013;(권장하지 않음)
 		int MyBirthDay = 19921013;  //camel case
 		
 		//4. 식별자 이름에 쓸 수 있는 특수문자는 밑줄(_), 달러기호($)
