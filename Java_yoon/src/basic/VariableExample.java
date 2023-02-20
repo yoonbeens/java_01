@@ -1,3 +1,4 @@
+package basic;
 
 public class VariableExample {
 
@@ -48,10 +49,10 @@ public class VariableExample {
 		//선언 및 초기화하지 않은 변수는 사용이 불가능합니다.
 //		int result = myscore + num; (X)
 		int result;
-		result;
+		
 //		System.out.println(result); (X)
 
-		
+
 		
 		
 	}

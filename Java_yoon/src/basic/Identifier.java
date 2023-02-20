@@ -1,3 +1,4 @@
+package basic;
 
 public class Identifier {
 
@@ -23,7 +24,7 @@ public class Identifier {
 		//식별자 이름에 공백을 포함할 수 없습니다.
 //		int my birth day = 19921013; (X)
 //		intmybirthday = 19921013;(권장하지 않음)
-		int MyBirthDay = 19921013;  //camel case
+		int myBirthDay = 19921013;  //camel case
 		
 		//4. 식별자 이름에 쓸 수 있는 특수문자는 밑줄(_), 달러기호($)
 		//뿐입니다. 하지만 사용을 권장하지는 않습니다.
@@ -43,8 +44,7 @@ public class Identifier {
 	    System.out.println(숫자);
 	    System.out.println(名);
 	    
-	    //test
-	  
+
 		//클래스의 이름은 항상 대문자로 시작
 	    //변수 이름은 소문자가 원칙(camel case는 연결문자 대문자)
 	    //변수 이름은 명사
