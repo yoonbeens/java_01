@@ -23,7 +23,7 @@ public class CastingExample1 {
 		double d = k;
 		System.out.println(d);
 	
-	    
+	    //boolean과 String은 형 변환이 되지 않는다.
 		
 
 	}

@@ -31,7 +31,6 @@ public class ScannerQuiz {
         System.out.print("출생년도: " + (2023 - age));
 		
         
-        
         /*
         System.out.print("이름: ");
 		String name = sc.nextLine();

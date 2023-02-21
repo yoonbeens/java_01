@@ -9,7 +9,7 @@ public class TextualExample {
 		
 // char는 단일문자만 가능
 		
-		char c2 = 44032;
+		char c2 = 44032; //char는 유니코드의 문자표를 받을 수 있다.
 		System.out.println(c2);
 
 		/*
