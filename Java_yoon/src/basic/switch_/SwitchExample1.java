@@ -47,7 +47,7 @@ public class SwitchExample1 {
 		}
 		
 		
-		
+		sc.close();
 		
 		
 		

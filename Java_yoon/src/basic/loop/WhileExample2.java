@@ -19,6 +19,10 @@ public class WhileExample2 {
 	    	n++;
 	    }
 		
+	
+	    System.out.println();
+	    
+	    
         int i = 45;
         while(i <= 150) {
         	System.out.print(i + " ");
@@ -30,29 +34,39 @@ public class WhileExample2 {
 		
         System.out.println();   
         
+
         //1 ~ 100까지의 정수 중 4의 배수이면서
         //8의 배수는 아닌 수를 가로로 출력해 보세요.
         
         int k = 1;
         
         while(k <= 100) {
-        	if(k % 4 == 0)
-        	if(!(k % 8 == 0)) {
-        		System.out.printf("%d ", k);
-        		
+        	if(k % 4 == 0) {
+            	if(!(k % 8 == 0)) {
+            		System.out.printf("%d ", k);
+            		
+            	}
         	}
+
         	k++;
         }
 		
+        
         System.out.println();
+        
         
         int j = 1;
         while(j <= 100) {
-        	if(j % 4 == 0 && i % 8 != 0) {
-        			System.out.println(j + " ");
+        	if(j % 4 == 0 && j % 8 != 0) {
+        			System.out.print(j + " ");
         		}
-        	}
-        	        	j++;
+
+        	j++;
+        }
+ 
+        	        	
+        	        	
+        	        	
         }
 		
 		

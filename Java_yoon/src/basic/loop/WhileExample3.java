@@ -1,44 +1,59 @@
 package basic.loop;
 
+import java.util.Scanner;
+
 public class WhileExample3 {
 
 	public static void main(String[] args) {
 
-	//1~30000까지의 정수 중 258의 배수의 개수를 출력.
+		/*
+		 - 정수 1개를 입력받아서 해당 정수가 소수(prime nummber)
+		 인지를 판별하시면 됩니다.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수를 입력하세요: ");
+		int num = sc.nextInt();
 		
 		int a = 1;
-		int i = 0;
-		while(a <= 30000) {
-			if(a % 258 == 0) {
-				i++;
-			}
+		int b = 0;
 		
-		a++;
-		}
-		
-		System.out.println(" " + i);
-		
-		
-		
-		
-		
-	//1000의 약수의 개수를 구하세요.
-	//1부터 1000까지 하나씩 올려가면서 1000이랑 나눠보세요.
-    //그랬을 때 나누어 떨어지는 애가 약수입니다.
-		
-		int b = 1;
-		int c = 0;
-		
-		while(b <= 1000) {
+		while(a <= num) {
+			if(num % a == 0) {
+				b++;
+
+				}
 			
-			if(1000 % b == 0) {
-				c++;
-			}			
-			b++;
+
+		    ++a;	
 		}
-		System.out.println(" " + c);
+		
+		if(b == 2) {
+			System.out.println("소수입니다.");
+		}
+		else {
+			System.out.println("소수가 아닙니다.");
+		}
+		
+		System.out.println("-------------------------");
+		
+		
+		int j = 2; //1은 모든 수의 약수이기 때문에 배제합니다.
+		
+		while(num % j != 0) {
+			j++;
+		}
+		
+		System.out.println(num == j ? "소수입니다." : "소수가 아닙니다.");
+		
+ 		sc.close();
+		
 		
 		
 		
 	}
+
 }
+
+
+
