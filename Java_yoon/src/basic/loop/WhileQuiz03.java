@@ -25,15 +25,16 @@ public class WhileQuiz03 {
 		System.out.println("두 번째 정수: ");
 		int y = sc.nextInt();
 
-		if(x > y) {
-			int temp = x;
-			x = y;
-			y = temp;
-		}
+//		if(x > y) {
+//			int temp = x;
+//			x = y;
+//			y = temp;
+//		}
 
 		
 		int t = 0;
-		int n = x;
+//		int n = x;
+		int n = (x > y ? y : x);
 
 		
 /*		int start = (x > y ? y : x);
@@ -48,9 +49,10 @@ public class WhileQuiz03 {
 		*/
 		
 		
-		while(n <= y) {			
+		while(x > y ? n <= x : n <= y) {			
 			t += n;
-		n++;	
+			n++;
+			System.out.println(n);
 		}
 		
 		System.out.println(t);

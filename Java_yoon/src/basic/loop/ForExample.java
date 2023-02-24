@@ -18,8 +18,11 @@ public class ForExample {
 		
 		for(int i=1; i<=10; i++) {
 			total += i;
+			
 		}
 
+		System.out.println();
+		
 		//for문은 begin과 end의 범위가 명확할 때 주로 쓴다
 		
 		//1~200까지의 정수 중 6의 배수이면서 12의 배수는 아닌 수를

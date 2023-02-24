@@ -33,7 +33,7 @@ public class LoopNestingQuiz01 {
 		}
 		
 		//Q.2
-		for(int hang=0; hang<+9; hang++) {
+		for(int hang=0; hang<=9; hang++) {
 			for(int dan=2; dan<=9; dan++) {
 				if(hang ==0) {
 					System.out.print(dan + "단\t");

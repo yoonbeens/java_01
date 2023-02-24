@@ -39,6 +39,11 @@ public class LoopNesting2 {
 		}
 		
 
-		System.out.println("\n소수의 개수: " + count + "개");}	
+		System.out.println("\n소수의 개수: " + count + "개");
+		
+	
+	
+	
+	}	
 
 }
