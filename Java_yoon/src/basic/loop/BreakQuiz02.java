@@ -63,7 +63,7 @@ public class BreakQuiz02 {
 		
 
 		
-		
+		sc.close();
 		
 		
 		

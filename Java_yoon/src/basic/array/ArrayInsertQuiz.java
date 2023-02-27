@@ -44,19 +44,14 @@ public class ArrayInsertQuiz {
 			}
 			    
 			for(int j=0; j<i; j++) {
-
 				if(f.equals(food[j])) {
 					System.out.println("이미 존재하는 음식입니다.");
-					continue outer;	
-							
+					i--; //continue회차의 값이 null로 들어가지 않게 하기 위해.
+					continue outer;								
+				}													
 			}
-				
-			
-			
-			
-		}
 		
-		food[i] = f;
+			food[i] = f;
 
 		}
 		
@@ -69,7 +64,7 @@ public class ArrayInsertQuiz {
 		}
 		
 		
-		
+		sc.close();
 		
 	}
 
