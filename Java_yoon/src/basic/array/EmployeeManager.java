@@ -108,6 +108,8 @@ public class EmployeeManager {
 								System.out.println(" ");
 								System.out.println("사번: " + userNums[i]);
 								System.out.println("이름: " + names[i]);
+								System.out.println("나이: " + ages[i]);
+								System.out.println("부서: " + departments[i]);
 							}
 							
 							}//for
