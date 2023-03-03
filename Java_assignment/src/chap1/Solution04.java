@@ -32,21 +32,29 @@ public class Solution04 {
 		Scanner sc = new Scanner(System.in);
 		int num [] = {1,2,3,4,5,6,7,8,9,10};
 		
+		
 		int[] n = new int [8];
-		boolean flag[] = new boolean[10];
-		for(int i=0; i<num.length-2; i++) {
+
+		while(true) {
 			System.out.println("학번: ");
 			n[i] = sc.nextInt();
-		}
-		for(int j=0; j<num.length; j++) {
-			for(int k=0; k<num.length-2; k++)
-			if(num[j] == n[k]) {
-				flag[j]=true;
-			}
-		}
-		for(int i=0; i<num.length; i++)
 			
-		System.out.println(Arrays.toString(flag));
+		}
+		
+//		boolean flag[] = new boolean[10];
+//		for(int i=0; i<num.length-2; i++) {
+//			System.out.println("학번: ");
+//			n[i] = sc.nextInt();
+//		}
+//		for(int j=0; j<num.length; j++) {
+//			for(int k=0; k<num.length-2; k++)
+//			if(num[j] == n[k]) {
+//				flag[j]=true;
+//			}
+//		}
+//		for(int i=0; i<num.length; i++)
+//			
+//		System.out.println(Arrays.toString(flag));
 
 		
 		

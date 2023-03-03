@@ -1,6 +1,6 @@
 package oop.basic;
 
-public class penMain {
+public class PenMain {
 
 	public static void main(String[] args) {
 

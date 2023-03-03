@@ -31,17 +31,38 @@ public class Solution03 {
 		
 			Scanner sc = new Scanner(System.in);
 			int[] nums = new int[5];
+			int[] co = new int[] {1,2,3,4,5};
+//			System.out.println("점수: ");
+//			int num = sc.nextInt();
+//			int n = nums[num];
+//			
+//			if(nums[0]>nums[1]) {
+//				
+//			}
 			
+//			int count = 0;
+//			for(int i=0;i<nums.length;i++) {
+//				System.out.print("점수: ");
+//				nums[i] = sc.nextInt();
+//				
+//				for(int j=0; j<nums.length;j++) {				
+//					if(nums[j]>nums[i]) {
+//						count++;
+//					}
+//				}
+//			}
+
+			int count = 0;
 			for(int i=0;i<nums.length;i++) {
 				System.out.print("점수: ");
 				nums[i] = sc.nextInt();
-				for(int j=0; j<nums.length-1;j++) {				
-					if(nums[i]>nums[j]) {
-						
-					}
+				if(nums[i]<nums[i]+1) {
+					for
+					co[i]=nums[i];
 				}
-			}
 
+			}
+			
 			System.out.println("점수\t순위");
 			System.out.println("-------------------");
 

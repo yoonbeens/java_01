@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-public class MathodQuiz02 {
+public class MathodQuiz022 {
 	
 
 

@@ -1,8 +1,4 @@
-
-public class MemberLocalVariable {
-
-	public static void main(String[] args) {
-
+package oop.basic;
 		/*
 		 # 멤버 변수(field, class member variable)
 		 1. 클래스 블록에 선언된 변수를 의미합니다.
@@ -17,7 +13,26 @@ public class MemberLocalVariable {
 		 2. 메모리의 stack영역에 저장되며, 선언된 블록을 벗어나면
 		  메모리에서 자동으로 소멸합니다.
 		 3. 값을 초기화하지 않으면 변수를 사용할 수 없습니다.
+		 (매개변수 포함)
 		 */
+
+
+
+public class MemberLocalVariable {
+	
+	int a; //멤버 변수(필드)
+	
+	void printNumber(int c) {//매개 변수
+		int b=1;//지역 변수
+		System.out.println("멤버변수 a: " + a);
+		System.out.println("지역변수 b: " + b);
+		System.out.println("매개변수 c: " + c);
+	}
+
+	public static void main(String[] args) {
+		
+		MemberLocalVariable m = new MemberLocalVariable();
+		m.printNumber(4);
 		
 		
 		
