@@ -20,7 +20,8 @@ public class Test {
 		Melon c = new Melon();
 		
 //		java.util.Scanner sc = new java.util.Scanner(System.in);
-
+		//패키지 경로가 다르면 import 선언이 필요하다
+		
 		// 패키지는 카멜 케이스도 쓰지 않는 것이 관례
 		// 자바는 기본 타입을 제외하면 거의 참조 클래스 타입
 		

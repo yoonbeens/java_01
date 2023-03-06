@@ -22,6 +22,7 @@ public class Player {
 		System.out.println("# 레벨: " + level);
 		System.out.println("# 공격력: " + atk);
 		System.out.println("# 체력: " + hp);
+		System.out.println();
 	}
 	
 	
