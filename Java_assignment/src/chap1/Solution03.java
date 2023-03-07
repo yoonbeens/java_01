@@ -31,7 +31,48 @@ public class Solution03 {
 		
 			Scanner sc = new Scanner(System.in);
 			int[] nums = new int[5];
-			int[] co = new int[] {1,2,3,4,5};
+			int[] rank = new int[5];
+//			int[] rank = new int[] {1,1,1,1,1};
+			int i;
+						
+			for(i=0; i<nums.length; i++) {
+				System.out.println("점수: ");
+				nums[i] = sc.nextInt();
+				rank[i] = 1;
+			}
+			
+			for(i=0; i<nums.length; i++)
+				//rank[i] = i+1;
+				for(int j=0; j<nums.length; j++) {
+					if(nums[i]<nums[j]) {
+						rank[i] += 1;
+					}
+				}
+			
+			System.out.println("점수\t순위");
+			for(i=0; i<nums.length; i++) {
+				System.out.println(nums[i] + "\t" + rank[i]);
+				
+			}
+			System.out.println();
+			
+			
+			
+//			for(int j=0; j<nums.length; j++) {
+//				int count = 0;
+//				if(rank[j]=[5]) {
+//					
+//				}
+//				for(int k=0; k<nums.length; k++) {						
+//					if(nums[k]<nums[k+1]) {						
+//						count++;						
+//					} 
+//				}
+//				rank[j] = count;
+//			}
+			
+		
+			
 //			System.out.println("점수: ");
 //			int num = sc.nextInt();
 //			int n = nums[num];
@@ -52,19 +93,19 @@ public class Solution03 {
 //				}
 //			}
 
-			int count = 0;
-			for(int i=0;i<nums.length;i++) {
-				System.out.print("점수: ");
-				nums[i] = sc.nextInt();
-				if(nums[i]<nums[i]+1) {
-					for
-					co[i]=nums[i];
-				}
-
-			}
-			
-			System.out.println("점수\t순위");
-			System.out.println("-------------------");
+//			int count = 0;
+//			for(int i=0;i<nums.length;i++) {
+//				System.out.print("점수: ");
+//				nums[i] = sc.nextInt();
+//				if(nums[i]<nums[i]+1) {
+//					for
+//					co[i]=nums[i];
+//				}
+//
+//			}
+//			
+//			System.out.println("점수\t순위");
+//			System.out.println("-------------------");
 
 			
 

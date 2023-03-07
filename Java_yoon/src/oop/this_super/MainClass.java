@@ -38,6 +38,16 @@ public class MainClass {
 		Hunter h1 = new Hunter("냥꾼짱짱맨");
 		h1.characterInfo();
 		
+		System.out.println("-------------------");
+		
+		w1.attack(m1);
+		m1.attack(h1);
+		m1.attack(h1);
+		m1.attack(h1);
+		m1.attack(h1);
+		m1.attack(h1);
+
+		
 	}
 
 }

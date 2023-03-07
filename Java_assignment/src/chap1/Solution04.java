@@ -31,15 +31,41 @@ public class Solution04 {
 		*/
 		Scanner sc = new Scanner(System.in);
 		int num [] = {1,2,3,4,5,6,7,8,9,10};
-		
-		
+		int i;
 		int[] n = new int [8];
+		boolean[] flag = new boolean[num.length];
 
-		while(true) {
+		for(i=0; i<n.length; i++) {
 			System.out.println("학번: ");
 			n[i] = sc.nextInt();
-			
 		}
+		
+		for(i=0;i<num.length;i++) {
+			for(int j=0;j<n.length;j++) {
+				if(num[i]==n[j]) {
+					flag[i]=true;
+					break;
+				}
+			}
+		}
+		System.out.print("숙제 안 낸 학생: ");
+		for(i=0;i<num.length;i++) {
+			if(flag[i]!=true) {
+				System.out.printf("%d ",num[i]);
+			}
+		}
+		sc.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 //		boolean flag[] = new boolean[10];
 //		for(int i=0; i<num.length-2; i++) {
