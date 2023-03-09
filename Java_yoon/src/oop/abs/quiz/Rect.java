@@ -2,7 +2,7 @@ package oop.abs.quiz;
 
 public class Rect extends Shape {
 
-	int a,b;
+	private int a,b;
 
 	public Rect(String name, int a,int b) {
 		super(name);
@@ -16,7 +16,14 @@ public class Rect extends Shape {
 		return a*b;
 	}
 
-
-	
-	
+		
 }
+
+
+
+
+
+
+
+
+

@@ -19,7 +19,7 @@ public class MainClass {
         */
 		
 		Shape circle = new Circle("circle", 4);
-		Shape rect = new Rect("r", 5, 5);
+		Shape rect = new Rect("rect", 5, 5);
 		
 		System.out.printf("원의 넓이: %.1f\n",circle.getArea());
 		System.out.printf("사각형의 넓이: " + rect.getArea());

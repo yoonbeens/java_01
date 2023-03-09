@@ -2,18 +2,16 @@ package oop.abs.quiz;
 
 public class Circle extends Shape {
 
-	int a;
-	
-	
-	public Circle(String name, int a) {
+	private int r;
+		
+	public Circle(String name, int r) {
 		super(name);
-		this.a = a;
+		this.r = r;
 	}
 
 	@Override
 	double getArea() {
-
-		return a*a*Math.PI;
+		return r*r*Math.PI;
 	}
 
 

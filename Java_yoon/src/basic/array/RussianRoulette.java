@@ -26,12 +26,18 @@ public class RussianRoulette {
 		//게임 인원 입력
 		System.out.println("시작 인원을 입력해주세요(2~4)");
 		System.out.println("> ");
+		
 		int num = sc.nextInt();
+			if(num < 2 || num > 4) {
+			System.out.println("게임 인원이 올바르지 않습니다. 게임을 종료합니다.");
+			sc.nextLine();
+			return;
 		
 		//플레이어 이름 등록하고
 		//배열을 하나 생성해서 플레이어들을 배치하시면 됩니다.
 		//배열의 크기는 참가자의 명수와 동일합니다.
-		
+			sc.nextLine();
+			
 		System.out.println("참여자 이름을 입력하세요 ");
 		int i;		
 		String names[] = new String[num];
@@ -39,21 +45,21 @@ public class RussianRoulette {
 		for(i=0; i<num; i++) {
 			System.out.print("참여자" + (i+1) + ":");
 			String name = sc.next();
-			
 			names[i] = name;
 		}
 		
-
-		
-		
-		
+	
 		//실탄 개수 입력
 		System.out.println("총알 개수를 입력해주세요(1~5)");
 		System.out.println("> ");
 		int bul = sc.nextInt();
+		if(bul < 1 || num > 5) {
+			System.out.println("알맞은 총알 개수가 아닙니다. 게임을 종료합니다.");
+			return;
+		}
 		
 		System.out.println("참여 인원: " + num + "명");
-		System.out.println("총알: " + bul + "개");
+		System.out.println("시작 총알: " + bul + "개");
 		System.out.println("참가자 목록\n" + (Arrays.toString(names)));
 		
 		//실탄을 탄창에 배치
@@ -61,31 +67,30 @@ public class RussianRoulette {
 		//false를 true로 바꾸는 것이 실탄 장전입니다.
 		//난수는 중복으로 발생할 가능성이 있기 때문에 중복 방지 로직을 세워서
 		//같은 위치에 두 개의 실탄이 장전되지 않도록 해 주시면 됩니다.
-		boolean[] bulletpos = new boolean[6];
+		boolean[] bullet = new boolean[6];
 		int shot = (int) (Math.random()*2 + 1);
-		int bullet = (int) (Math.random()*bul + 1);
 		int peo = (int) (Math.random()*num + 1);
-		boolean flag = false;
+		int bulr = (int) (Math.random()*bul + 1);
 		
-		while(true) {
-			
-			
-				for(i=0; i<bulletpos.length; i++) {
-					for(int j=0; j<=i; j++) {
-						if(flag == bulletpos[j]) {
-							
+		while(true) {			
+				
+				for(i=0; i<bullet.length-1; i++) {
+					
+						if(bulr == i) {
 
-							continue;							
+							bullet[i] = false;							
 						}													
-					}
+					
 					
 				}
-					if(bullet != i) {
-					bulletpos[bullet] = true;
+					if(bulr != i) {
+					bullet[bulr] = true;
 					
-					} else if(bullet == i && bullet >= bul && bullet <= bul) {
-					break;	
+					} else if(bulr == i && bulr <= bul) {
+						System.out.println("총알이 장전되었습니다.");
 					}
+	
+					
 		
 		
 																		
@@ -97,15 +102,14 @@ public class RussianRoulette {
 		//일부러 입력 대기를 해서 흐름을 잠시 끊어줍니다.
 		//이 입력값(enter)은 받아서 활용할 것이 아니기 때문에
 		//따로 변수를 선언하지 않습니다.
-					int userNums[] = new int [num];
+		int userNums[] = new int [num];
 		
-		for(i=0; i<userNums.length-1; i++)
+		for(i=0; i<userNums.length-1; i++) {
+			
+		
 			if(peo == userNums[i]) {
-				System.out.println(names[peo] + "님 차례입니다.");
-		
-				
+				System.out.println(names[i] + "님 차례입니다.");				
 			}
-		
 		System.out.println("엔터를 누르시면 격발합니다");
 		
 		System.out.println("");
@@ -113,7 +117,11 @@ public class RussianRoulette {
 		System.out.println("격발하였습니다 !");
 		
 		sc.nextLine();
-
+		
+		if(shot == 1) {
+			
+		}
+		}
 
 		//최후의 1인이 남을 때까지 게임을 진행해 주세요.
 		//또는 총알을 다 소비할 때까지 게임을 진행해 주세요.
@@ -121,16 +129,16 @@ public class RussianRoulette {
 		//사람이 한 명 아웃되면 배열의 크기를 줄여주세요.
 
 		
-		for(i=0; i<names.length; i++) {
-			if(shot == 1) {
-				flag = true;
-				for(int j=i; j<names.length-1; j++) {
-					names[j] = names[j+1];
-					System.out.println(names[j] + "님이 사망하셨습니다.");
-				}
-				break;
-			}
-		}
+//		for(i=0; i<names.length; i++) {
+//			if(shot == 1) {
+//				for(int j=i; j<names.length-1; j++) {
+//					names[j] = names[j+1];
+//					bullet[j] = true;
+//					System.out.println(names[j] + "님이 사망하셨습니다.");
+//				}
+//				break;
+//			}
+//		}
 		
 				
 		
@@ -138,7 +146,7 @@ public class RussianRoulette {
 		System.out.println("생존자 목록\n" + Arrays.toString(names));
 		System.out.println("남은 총알 수: 0개");
 		
-		
+			}
 		
 		
 		
