@@ -11,5 +11,9 @@ public class Car {
 		this.model = model;
 	}
 	
+	void carInfo() {
+		
+	}
+	
 	
 }

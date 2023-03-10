@@ -1,4 +1,4 @@
-package oop.inter.Bad;
+package oop.inter.bad;
 
 import java.util.Scanner;
 

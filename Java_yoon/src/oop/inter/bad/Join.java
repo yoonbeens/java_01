@@ -1,4 +1,4 @@
-package oop.inter.Bad;
+package oop.inter.bad;
 
 public class Join {
 

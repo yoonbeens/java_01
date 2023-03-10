@@ -17,9 +17,10 @@ public class Score {
 	int h;
 	int e;
 	int m;
-	double hem = (h+e+m)/3;
+	int total;
+	double hem;
 	
-	Score(String name, int h, int e, int m, double hem){
+	Score(String name, int h, int e, int m, int total, double hem){
 		this.name = name;
 		this.h = h;
 		this.e = e;
@@ -30,9 +31,10 @@ public class Score {
 	
 	void scoreInfo() {
 		System.out.println("이름: " + name);
-		System.out.println("국어" + h);
-		System.out.println("영어" + e);
+		System.out.println("국어: " + h);
+		System.out.println("영어: " + e);
 		System.out.println("수학: " + m);
+		System.out.println("총점: " + total);
 		System.out.println("평균" + hem);
 	}
 

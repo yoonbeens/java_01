@@ -30,35 +30,37 @@ public class ScoreMain {
 		
 		for(int i=0; i<stu.length; i++) {
 			System.out.println("입력을 그만하시려면 그만을 입력해주세요");
-			String stop = sc.next();
-			
 			
 			System.out.println("이름을 입력하세요");
 			String name = sc.next();
+			if(name.equals("그만")) {
+				System.out.println("입력을 종료합니다.");
+				break;
+			}
+			
 			System.out.println("국어 점수: ");
 			int h = sc.nextInt();
 			System.out.println("영어 점수: ");
 			int e = sc.nextInt();
 			System.out.println("수학 점수: ");
 			int m = sc.nextInt();
-			System.out.println("평균: " + (h+e+m)/3);
+
 			
-			if(stop.equals("그만")) {
-				System.out.println("입력을 종료합니다.");
-			}
-			
-			Score s = new Score(name, h, e, m, (h+e+m)/3);
-			stu[i] = s;
-			
-			
-			
-			
+			stu[i] = new Score(name, h, e, m, (h+e+m), (h+e+m)/3);
+														
 		}
 		
 		
 		for(Score s : stu) {
+			if(s == null) break;
 			s.scoreInfo();
+			System.out.println("-----------------------");
 		}
+		
+		
+		sc.close();
+		
+		
 		
 		
 	}

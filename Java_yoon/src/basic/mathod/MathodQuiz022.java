@@ -71,6 +71,7 @@ public class MathodQuiz022 {
 		if(newf.equals(foods[indexOf(targetName)])) {
 			System.out.println("존재하는 음식입니다.");
 		}
+		return false;
 	}
 	
 	//특정 음식 제거 함수
