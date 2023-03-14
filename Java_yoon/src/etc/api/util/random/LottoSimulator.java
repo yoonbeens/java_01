@@ -18,7 +18,7 @@ public class LottoSimulator {
 	static int prize5 = 0;	//1등 당첨 횟수를 세 줄 변수
 	static int failCnt = 0; //꽝 당첨 횟수를 세 줄 변수
 
-	public static List createLotto(){
+	public static Set<Integer> createLotto(){
 		
 		/*
 		 - 1~45 범위의 난수 6개를 생성하셔서
@@ -33,21 +33,29 @@ public class LottoSimulator {
 		while(lotto.size() < 6) {
 			int num = r.nextInt(45) + 1;
 			lotto.add(num);
-		}
-		
+		}		
 		System.out.println(lotto);
-		List<Integer> list = new ArrayList<>(lotto);
-		Collections.sort(list);
-		return list;
+		
+		return lotto;
 		
 		
 	}
 	
 	//보너스 번호를 생성하는 메서드
 
-	public static int createBonusNum(당첨번호) {
-
+	public static int createBonusNum(Set<Integer> lotto) {
+		
+		Random b = new Random();
+		int bonus = b.nextInt(45) + 1;
+		int bonusNum = 0;		
+			if(lotto.contains(bonus)) {
+				bonusNum = bonus;
+			}
+			
+		return bonusNum;
+		
 		/*
+		 # 당첨번호
 		 - 매개값으로 전달되는 당첨번호 집합을 전달 받으신 후
 		  당첨번호들을 피해서 보너스번호 하나만 뽑아주세요.
 		  범위는 마찬가지로 1 ~ 45 사이의 난수입니다.
@@ -60,7 +68,7 @@ public class LottoSimulator {
 	}
 	
 	//당첨 등수를 알려주는 메서드
-	public static void checkLottoNumber(???, ???, ???) {
+	public static void checkLottoNumber(Set<Integer> lotto, Set<Integer> co, int bonusNum) {
 		/*
 		 매개값으로 당첨번호집합, 구매한 로또 번호집합, 보너스번호를 받습니다.
 		 내 로또 번호와 당첨 번호를 비교하여
@@ -72,6 +80,20 @@ public class LottoSimulator {
 		 3개 일치 -> 5등
 		 나머지 -> 꽝
 		 */
+		LottoSimulator s = new LottoSimulator();
+		
+		for(int i=1; i<lotto.size(); i++) {
+			for(int j=1; j<co.size(); j++) {
+				if(co.contains(j)) {
+					
+				}
+			}
+		}
+		
+		
+		
+		
+		
 	}
 	
 	public static void main(String[] args) {
@@ -79,6 +101,10 @@ public class LottoSimulator {
 		//로또 번호 생성 메서드를 호출해서 당첨번호를 하나 고정시키세요.
 		
 		//보너스번호도 하나 고정시키세요.
+	
+		LottoSimulator s = new LottoSimulator();
+		
+		
 		
 		while(true) {
 			/*
@@ -87,6 +113,12 @@ public class LottoSimulator {
 			  반복문을 종료합니다.
 			 - 로또를 구매하기 위한 금액도 출력하세요. (long) 
 			 */
+			if(lotto.contains(co)) {
+				break;
+				System.out.println("누적 당첨 횟수: " + s.prize1);
+				System.out.println(s.prize1*1000);
+			}
+			
 			
 			
 		}
