@@ -6,16 +6,11 @@ public class Student extends Person {
 
 	
 	public Student(String name, int age, String num) {
-		super(name, age);
-		this.num = num;
-	}
 
+		super.info(name, age);
 
-
-
-	@Override
-	void info() {
-		super.info();
+		System.out.println("부서: "+ num);
+		System.out.println("-----------------");
 	}
 	
 

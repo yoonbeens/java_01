@@ -21,28 +21,21 @@ public class Solution01 {
 		 */
 		
 		Scanner sc = new Scanner(System.in);
-		
+
 		int[] nums = new int[10];
+		int max = 0;
+
 		for(int i=0;i<nums.length;i++) {
-		System.out.print("숫자: ");
-		nums[i] = sc.nextInt();
-
+			System.out.println((i+1) + "번째 숫자: ");
+			int num = sc.nextInt();
+			nums[i] = num;
 		}
-		int n=0;
-		for(int i=0; i<nums.length; i++) {
-			for(int j=i+1; j<nums.length-1; j++) {				
-				if(nums[i]>nums[j]) {
-					n = nums[i];
-				} else if(nums[j]>=nums[i]) {
-					n = nums[j];
-				} else {
-					
-				}
-			}
-			
+		
+		for(int i=0;i<nums.length;i++) {
+			max = (max>nums[i] ? max:nums[i]);
 		}
-
-		System.out.println("가장 큰 숫자: " + n);
+		System.out.println("가장 큰 숫자: " + max);
+		sc.close();
 		
 
 

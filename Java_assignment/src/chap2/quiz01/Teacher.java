@@ -8,16 +8,11 @@ public class Teacher extends Person {
 	
 	
 	public Teacher(String name, int age, String sub) {
-		super(name, age);
-		this.sub = sub;
-	}
 
+		super.info(name, age);
 
-
-	@Override
-	void info() {
-		// TODO Auto-generated method stub
-		super.info();
+		System.out.println("과목: "+ sub);
+		System.out.println("-----------------");
 	}
 
 

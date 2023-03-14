@@ -5,16 +5,15 @@ public class Person {
 	String name;
 	int age;
 	
-	Person(String name, int age) {
-		super();
+	
+	void info(String name, int age) {
+
 		this.name = name;
 		this.age = age;
-	}
-	
-	
-	void info() {
-		System.out.print("이름: ");
-		System.out.print("과목: ");
+
+		System.out.println("이름: " + this.name);
+		System.out.println("나이: " + this.age);
+		
 	}
 	
 	

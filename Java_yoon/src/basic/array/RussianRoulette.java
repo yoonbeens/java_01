@@ -7,149 +7,128 @@ public class RussianRoulette {
 
 	public static void main(String[] args) {
 
-		/*
-        - 게임 인원은 2 ~ 4명 입니다.
-        - 실탄 개수는 6개 미만으로 설정하겠습니다.
-        - 게임이 시작되면, 시작 인원은 랜덤으로 순서가 설정됩니다.
-         또한 총알의 위치도 랜덤으로 설정됩니다.
-        - 총알의 위치는 boolean 타입의 배열로 선언하여 배치하였습니다.
-        ex)  [false, false, false, true, false, false]
-        - 룰은 정해진 것은 없지만, 한명이 사망하면 총알의 위치를 
-         랜덤으로 바꿔서 남은 인원으로 다시 진행을 할 생각입니다.
-         원하는 규칙이 있다면 자유롭게 커스텀해서 작성해 보세요.
-        */
+		Scanner sc = new Scanner (System.in);
 		
-		Scanner sc = new Scanner(System.in);
+		System.out.println("게임을 시작합니다.");
+		sc.nextLine();
 		
 
+		int peo;
+
+		while(true) { 
+			System.out.println("게임에 참여할 인원을 입력해주세요.(2~4)");
+			System.out.print("> ");
+			peo = sc.nextInt();
+
+			if(peo<2 || peo>4) {
+				System.out.println("2~4명 사이로 다시 입력해주세요.");
+				continue;
+			}
+			break;
+		}
+
+		String[] person = new String[peo];
+		System.out.println("\n 플레이어의 이름을 입력해주세요.");
+
+		for(int i =0; i<person.length; i++) {
+			System.out.print((i+1)+"번 플레이어: ");
+			person[i] = sc.next();
+		}
+		System.out.println("\n등록된 플레이어: "+Arrays.toString(person));
+
+
+		int bullett;
+		while(true) {
+			System.out.println("\n 실탄 개수를 입력해주세요. (1~5)");
+			System.out.print("> ");
+			bullett = sc.nextInt();
+
+			if(bullett<1 || bullett>5) {
+				System.out.println("1~5개 사이로 다시 입력해주세요.");
+				continue;
+			}
+			break;
+		}
+
 		
-		//게임 인원 입력
-		System.out.println("시작 인원을 입력해주세요(2~4)");
-		System.out.println("> ");
+		boolean[] bulletPos = new boolean[6];
+
+		for(int i=0; i<bullett; i++) {
+			int bulletR = (int) (Math.random()*bulletPos.length);	
+			if(bulletPos[bulletR]==true) {
+				i--;
+				continue;	
+			} else {
+				bulletPos[bulletR] = true;
+			}
+		}
+
+
+		int startP = (int) (Math.random()*(person.length)); 
 		
-		int num = sc.nextInt();
-			if(num < 2 || num > 4) {
-			System.out.println("게임 인원이 올바르지 않습니다. 게임을 종료합니다.");
-			sc.nextLine();
-			return;
+		System.out.println("\n"+person[startP]+"부터 차례대로 순서가 돌아갑니다.");
+		System.out.println("엔터를 누르면 게임이 시작됩니다.");
+		sc.nextLine();
+
 		
-		//플레이어 이름 등록하고
-		//배열을 하나 생성해서 플레이어들을 배치하시면 됩니다.
-		//배열의 크기는 참가자의 명수와 동일합니다.
-			sc.nextLine();
+		int bulletCount=bullett;
+		while(true) {
+
+			System.out.println(person[startP]+"의 차례.");
+			System.out.println("'Enter'를 누르면 격발됩니다.");
+			sc.nextLine();					
+			int bang = (int) (Math.random()*6);
 			
-		System.out.println("참여자 이름을 입력하세요 ");
-		int i;		
-		String names[] = new String[num];
-		
-		for(i=0; i<num; i++) {
-			System.out.print("참여자" + (i+1) + ":");
-			String name = sc.next();
-			names[i] = name;
-		}
-		
-	
-		//실탄 개수 입력
-		System.out.println("총알 개수를 입력해주세요(1~5)");
-		System.out.println("> ");
-		int bul = sc.nextInt();
-		if(bul < 1 || num > 5) {
-			System.out.println("알맞은 총알 개수가 아닙니다. 게임을 종료합니다.");
-			return;
-		}
-		
-		System.out.println("참여 인원: " + num + "명");
-		System.out.println("시작 총알: " + bul + "개");
-		System.out.println("참가자 목록\n" + (Arrays.toString(names)));
-		
-		//실탄을 탄창에 배치
-		//난수를 생성하셔서 실탄을 탄창에 배치합니다.
-		//false를 true로 바꾸는 것이 실탄 장전입니다.
-		//난수는 중복으로 발생할 가능성이 있기 때문에 중복 방지 로직을 세워서
-		//같은 위치에 두 개의 실탄이 장전되지 않도록 해 주시면 됩니다.
-		boolean[] bullet = new boolean[6];
-		int shot = (int) (Math.random()*2 + 1);
-		int peo = (int) (Math.random()*num + 1);
-		int bulr = (int) (Math.random()*bul + 1);
-		
-		while(true) {			
-				
-				for(i=0; i<bullet.length-1; i++) {
-					
-						if(bulr == i) {
 
-							bullet[i] = false;							
-						}													
-					
-					
+			if(bulletPos[bang]==true) {
+				System.out.println("총알이 발사되었습니다.");	
+				System.out.println(person[startP]+" 님이 사망하였습니다.");	
+
+				for(int i=startP; i<person.length-1; i++) { 
+						person[i] = person[i+1];
 				}
-					if(bulr != i) {
-					bullet[bulr] = true;
-					
-					} else if(bulr == i && bulr <= bul) {
-						System.out.println("총알이 장전되었습니다.");
-					}
-	
-					
-		
-		
-																		
-		//실행 순서 정하기
-		//난수를 이용해서 실행 순서를 정합니다.
-		//시작 인덱스를 난수로 정해서 돌아가게 하셔도 되고
-		//아예 배치를 섞으셔도 상관없습니다.
-		
-		//일부러 입력 대기를 해서 흐름을 잠시 끊어줍니다.
-		//이 입력값(enter)은 받아서 활용할 것이 아니기 때문에
-		//따로 변수를 선언하지 않습니다.
-		int userNums[] = new int [num];
-		
-		for(i=0; i<userNums.length-1; i++) {
-			
-		
-			if(peo == userNums[i]) {
-				System.out.println(names[i] + "님 차례입니다.");				
-			}
-		System.out.println("엔터를 누르시면 격발합니다");
-		
-		System.out.println("");
-		sc.nextLine();
-		System.out.println("격발하였습니다 !");
-		
-		sc.nextLine();
-		
-		if(shot == 1) {
-			
-		}
-		}
-
-		//최후의 1인이 남을 때까지 게임을 진행해 주세요.
-		//또는 총알을 다 소비할 때까지 게임을 진행해 주세요.
-		//총알을 소모하면 true값을 false로 변경해 주세요.
-		//사람이 한 명 아웃되면 배열의 크기를 줄여주세요.
-
-		
-//		for(i=0; i<names.length; i++) {
-//			if(shot == 1) {
-//				for(int j=i; j<names.length-1; j++) {
-//					names[j] = names[j+1];
-//					bullet[j] = true;
-//					System.out.println(names[j] + "님이 사망하셨습니다.");
-//				}
-//				break;
-//			}
-//		}
-		
 				
-		
-		}
-		System.out.println("생존자 목록\n" + Arrays.toString(names));
-		System.out.println("남은 총알 수: 0개");
-		
+				String[] temp = new String[person.length-1];		
+				for(int i=0; i<temp.length; i++) {
+					temp[i] = person[i];
+				} 
+				
+				person = temp; temp = null;
+
+				bulletPos[bang] = false;
+				bulletCount -= 1;
+				
+			} else {
+				System.out.println("발사되지 않았습니다.");
+				startP += 1;
 			}
+				
+			if(startP >= person.length) {
+				startP = 0;
+			}
+			
 		
-		
-		
+			if(person.length==1) {
+				System.out.println("\n남은 인원은 1명입니다.");
+				System.out.println("게임을 종료합니다.");
+				break;
+			}
+			if(bulletCount==0) {
+				System.out.println("\n총알이 모두 소모되었습니다.");
+				System.out.println("게임을 종료합니다.");
+				break;
+			}
+			
+
+			System.out.println("\n 현재 생존 인원: "+Arrays.toString(person));
+			System.out.println("새 총알을 장전합니다.");
+			sc.nextLine();
+
+		}
+
+		System.out.println("\n------------------------\n");
+		System.out.println("남은 총알: "+bulletCount);
+		System.out.println("생존 인원: "+Arrays.toString(person));
 		
 		sc.close();
 		
