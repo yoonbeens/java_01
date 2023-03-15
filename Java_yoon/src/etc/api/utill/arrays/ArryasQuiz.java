@@ -13,34 +13,57 @@ public class ArryasQuiz {
 	    완주하지 못한 선수는 1명이라고 가정합니다.
 	    */	 
 		
-		String[] c = new String[5];
-			
+		Arrays.sort(participant);
+		Arrays.sort(completion);
 		
-			for(int i=0; i<participant.length; i++) {
-				for(int j=0; j<completion.length; j++) {
-					if(participant[i]!=completion[j]) {
-						c[i] = participant[i];
-					
-				} else {
-					
-				}
+		for(int i=0; i<completion.length; i++) {
+			if(!participant[i].equals(completion[i])) {
+				return participant[i];
 			}
 		}
 		
+		return participant[participant.length-1];
 		
+		
+	}
 
-		return c[0];
-}
-	
-	
 	public static void main(String[] args) {
 		
 		String[] participant = {"홍길동", "김길동", "김철수", "최철수", "박영희"};
-		String[] completion = {"홍길동", "김길동", "박영희",	"김철수"};
+		String[] completion = {"김철수", "김길동", "박영희", "최철수"};
+
+		System.out.println("완주하지 못한자: " + solution(participant, completion));
 		
 		
 		
-		System.out.println(solution(participant, completion));
+//		String[] c = new String[5];
+//			
+//		
+//			for(int i=0; i<participant.length; i++) {
+//				for(int j=0; j<completion.length; j++) {
+//					if(participant[i]!=completion[j]) {
+//						c[i] = participant[i];
+//					
+//				} else {
+//					
+//				}
+//			}
+//		}
+//		
+//		
+//
+//		return c[0];
+//}
+//	
+//	
+//	public static void main(String[] args) {
+//		
+//		String[] participant = {"홍길동", "김길동", "김철수", "최철수", "박영희"};
+//		String[] completion = {"홍길동", "김길동", "박영희",	"김철수"};
+//		
+//		
+//		
+//		System.out.println(solution(participant, completion));
 		
 		
 		

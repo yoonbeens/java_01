@@ -9,7 +9,7 @@ public class MainClass {
 
 		Teacher t = new Teacher("김국어", 46, "국어");
 
-		Employee e = new Employee("박영업", 32, "영업부");
+		
 		
 		
 		

@@ -73,7 +73,7 @@ public class DateExample {
 		
 		//원하는 형식으로 (h로 쓰면12시간 기준 시, H로 쓰면 24시간 기준 시)
 		DateTimeFormatter dtf =
-				DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 a hh시 mm분 ss초");
+				DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 E요일 a hh시 mm분 ss초");
 		
 		System.out.println(localDateTime.format(dtf));
 		
