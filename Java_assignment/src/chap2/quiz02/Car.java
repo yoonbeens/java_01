@@ -13,7 +13,7 @@ public class Car {
 	}
 	
 	
-	void setSpeed (int speed) {
+	void setSpeed(int speed) {
 		
 		if(speed<0 || speed>200) {
 			System.out.println("속도는 0에서 200 사이여야 합니다.");
@@ -33,7 +33,7 @@ public class Car {
 	}
 	
 	
-	void setMode (char mode) {
+	void setMode(char mode) {
 		if(mode!='R' && mode!='N' && mode!='D'){
 			this.mode = 'P';
 		} else {
@@ -65,7 +65,7 @@ public class Car {
 	
 	private void cylinder() {
 		if(start) {
-			System.out.println("실런더가 움직입니다.");
+			System.out.println("실린더가 움직입니다.");
 		} else {
 			System.out.println("실린더가 움직이지 않습니다.");	
 			return;
