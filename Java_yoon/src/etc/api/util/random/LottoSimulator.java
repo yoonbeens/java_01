@@ -155,7 +155,7 @@ public class LottoSimulator {
 		System.out.println("4등: " + prize4 + "회");
 		System.out.println("5등: " + prize5 + "회");
 		System.out.println("꽝: " + failCnt + "회");
-		System.out.println("총액: " + (prize1 + prize2 +prize3 + prize4 + prize5 + failCnt)*1000 + "원");
+		System.out.println("총액: " + (prize1 + prize2 +prize3 + prize4 + prize5 + failCnt)*1000L + "원");
 		
 		
 		

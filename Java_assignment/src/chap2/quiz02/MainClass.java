@@ -4,7 +4,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		Car car = new Car("merse"); 
+		Car car = new Car("꼬마자동차 붕붕이"); 
 		
 		System.out.println("*** 운전을 시작합니다 ***");
 		System.out.println("Mode: R, N, D, P");

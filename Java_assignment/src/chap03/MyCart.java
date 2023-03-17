@@ -1,5 +1,6 @@
 package chap03;
 
+
 public class MyCart {
 
 	private int money;
@@ -23,13 +24,13 @@ public class MyCart {
 	
 	
 	public void buy(Product p) {
-		if()
-		if(this.money<money) {
+		
+		if(p.price>money) {
 			System.out.println("금액부족");
 			return;
 		} else {
-			money -= this.money;
-			add();
+			money -= p.price;
+			add(p);
 		}
 	}
 	
@@ -46,14 +47,23 @@ public class MyCart {
 
     - 모든 로직이 완료되면 info() 메서드를 호출합니다.
     */
-	Cart2[] = new Cart[2];
 	
-	private void add() {
-		for(int j=0; j<cart.length; j++) {
-			if(this.cart.length<cart.length) {				
-				i++;
-			}
+	
+	private void add(Product p) {
+		
+		cart[i] = p;
+		i++;
+		
+		if(cart.length <= i) {
+			Product[] cartR = new Product[cart.length];
+						
+			for(int j=0; j<cart.length; j++) {
+				cartR[j] = cart[j];				
+			}			
+			cart = cartR;
 		}
+		
+		info();
 		
 		
 		
@@ -70,10 +80,24 @@ public class MyCart {
     - MyCart 선언이 완료되었다면 MainClass에서 buy메서드를 호출해 봅니다.
     */
 	
-	public void productInfo() {
+	public void info() {
+		
+		int total = 0;
+		
+		System.out.print("구매 목록: ");
+		
 		for(int j=0; j<cart.length; j++) {
-			cart[j].Info();
+			if(cart[j]!=null) {
+				total = cart[j].price ++;
+				System.out.print(cart[j].name + "/t/n");
+				
+			}
+			System.out.println("총액" + total + "원");
+			System.out.println("잔액"  + (money - total) + "원");
 		}
+		
+
+		
 	}
 
 	

@@ -6,8 +6,8 @@ public class MainClass {
 
 		MyCart c = new MyCart(2100);
 		
+		c.info();
 		
-		c.buy(null);
 		
 		
 		
