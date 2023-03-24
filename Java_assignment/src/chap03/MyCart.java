@@ -26,7 +26,7 @@ public class MyCart {
 	public void buy(Product p) {
 		
 		if(p.price>money) {
-			System.out.println("금액부족");
+			System.out.println("잔액이 부족해 추가 구매가 불가능합니다. || 현재 잔액" + money + "원");
 			return;
 		} else {
 			money -= p.price;
@@ -55,7 +55,7 @@ public class MyCart {
 		i++;
 		
 		if(cart.length <= i) {
-			Product[] cartR = new Product[cart.length];
+			Product[] cartR = new Product[cart.length*2];
 						
 			for(int j=0; j<cart.length; j++) {
 				cartR[j] = cart[j];				
@@ -88,14 +88,14 @@ public class MyCart {
 		
 		for(int j=0; j<cart.length; j++) {
 			if(cart[j]!=null) {
-				total = cart[j].price ++;
-				System.out.print(cart[j].name + "/t/n");
+				total += cart[j].price;
+				System.out.print(cart[j].name + " ");
 				
 			}
-			System.out.println("총액" + total + "원");
-			System.out.println("잔액"  + (money - total) + "원");
+			
 		}
-		
+		System.out.println("총 구매 금액" + total + "원");
+		System.out.println("잔액"  + (money) + "원");
 
 		
 	}
@@ -136,3 +136,4 @@ public class MyCart {
 	
 	
 }
+

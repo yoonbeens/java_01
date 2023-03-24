@@ -6,9 +6,11 @@ public class MainClass {
 
 		MyCart c = new MyCart(2100);
 		
-		c.info();
-		
-		
+		c.buy(new Tv());
+		c.buy(new Radio());
+		c.buy(new Computer());
+		c.buy(new Radio());
+
 		
 		
 
