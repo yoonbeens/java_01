@@ -161,6 +161,7 @@ public class Point {
 
 					} catch (Exception e) {
 						System.out.println("정수를 입력해주세요.");
+						sc.nextLine();
 
 					}
 
@@ -202,7 +203,7 @@ public class Point {
 					System.out.println(s.getName() + "님의 정보를 삭제합니다.[Y / N]");
 					String yn = sc.next();
 
-					if(yn.equals("Y") || yn.equals("y")) {			
+					if(yn.toUpperCase().equals("Y")) {			
 						System.out.println(s.getName() + "님의 정보가 삭제되었습니다.");
 						flag = true;
 						students.remove(s);

@@ -79,6 +79,7 @@ public class FoodManager {
 					System.out.println("메뉴부터 먼저 등록해 주세요!");
 				} else {
 					Set<String> all = foods.keySet();
+//					for(String f : foods.keySet())
 					for(String f : all) {
 						System.out.println(f + " : " + foods.get(f) + "원");
 					}
@@ -140,6 +141,8 @@ public class FoodManager {
 				case "Y": case "y": case "ㅛ":
 				System.out.println("프로그램을 종료합니다.");
 				break;
+				
+//				System.exit(0);
 					
 				default :
 				System.out.println("잘못 입력하셨습니다.");

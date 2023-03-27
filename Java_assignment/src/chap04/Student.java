@@ -53,7 +53,7 @@ public class Student {
 				
 			} catch (Exception e) {
 				System.out.println("정수를 입력해주세요.");
-				
+				sc.nextLine();
 				
 			} 
 			break;
